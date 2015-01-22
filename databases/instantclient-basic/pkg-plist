@@ -1,0 +1,19 @@
+usr/bin/adrci
+usr/bin/genezi
+usr/bin/uidrvci
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libclntsh.so.12.1
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libclntshcore.so.12.1
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libnnz12.so
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libocci.so.12.1
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libociei.so
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libocijdbc12.so
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/libons.so
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/liboramysql12.so
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/ojdbc6.jar
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/ojdbc7.jar
+usr/lib/oracle/%%ORACLEVERSION%%/client/lib/xstreams.jar
+@dirrmtry usr/lib/oracle/%%ORACLEVERSION%%/client/lib
+@dirrmtry usr/lib/oracle/%%ORACLEVERSION%%/client
+@dirrmtry usr/lib/oracle/%%ORACLEVERSION%%
+
+@dirrmtry usr/lib/oracle

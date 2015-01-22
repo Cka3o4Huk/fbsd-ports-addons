@@ -1,0 +1,31 @@
+Index: graphics/svgalib/files/patch-src-paradise.c
+===================================================================
+--- graphics/svgalib/files/patch-src-paradise.c	(revision 0)
++++ graphics/svgalib/files/patch-src-paradise.c	(working copy)
+@@ -0,0 +1,11 @@
++--- src/paradise.c.orig	2015-01-07 00:08:55.000000000 +0300
+++++ src/paradise.c	2015-01-07 00:09:33.000000000 +0300
++@@ -40,7 +40,7 @@
++ {
++ }
++ 
++-void inline _outb(unsigned port,unsigned value)
+++static void inline _outb(unsigned port,unsigned value)
++ {
++ #ifdef DEBUG
++  printf ("0x%x, 0x%x\n",port,value);
+
+Property changes on: graphics/svgalib/files/patch-src-paradise.c
+___________________________________________________________________
+Added: fbsd:nokeywords
+## -0,0 +1 ##
++yes
+\ No newline at end of property
+Added: svn:eol-style
+## -0,0 +1 ##
++native
+\ No newline at end of property
+Added: svn:mime-type
+## -0,0 +1 ##
++text/plain
+\ No newline at end of property
