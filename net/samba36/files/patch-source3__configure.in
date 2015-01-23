@@ -1,6 +1,6 @@
---- ./source3/configure.in.orig	2013-01-18 10:41:08.000000000 +0000
-+++ ./source3/configure.in	2013-01-30 01:24:19.349878982 +0000
-@@ -864,9 +864,13 @@
+--- ./source3/configure.in.orig	2014-06-23 10:03:27.000000000 +0400
++++ ./source3/configure.in	2015-01-23 10:45:57.968934461 +0300
+@@ -858,9 +858,13 @@
  	AC_PATH_PROG(CUPS_CONFIG, cups-config)
  
          if test "x$CUPS_CONFIG" != x; then
@@ -15,16 +15,7 @@
  		AC_CHECK_HEADERS(cups/cups.h cups/language.h)
  
  		if test x"$ac_cv_header_cups_cups_h" = xyes -a \
-@@ -875,7 +879,7 @@
- 			# underlinked. With cups-config --libs we pull in unwanted and unneeded
- 			# dendencies including thread libraries - use cups-config only if really
- 			# required. 
--			AC_CHECK_LIB_EXT(cups, ac_save_PRINT_LIBS , httpConnect,
-+			AC_CHECK_LIB_EXT(cups, ac_save_PRINT_LIBS, httpConnect,
- 				[PRINT_LIBS="$ac_save_PRINT_LIBS -lcups"],
- 				[AC_MSG_WARN([your cups library doesn't link with -lcups alone, it might be underlinked.]) ;
- 				 PRINT_LIBS="$ac_save_PRINT_LIBS `$CUPS_CONFIG --libs`"])
-@@ -885,10 +889,10 @@
+@@ -879,10 +883,10 @@
  			AC_CHECK_LIB_EXT(cups, PRINT_LIBS, httpConnectEncrypt)
  		else
  			AC_MSG_WARN([cups-config around but cups-devel not installed])
@@ -37,7 +28,16 @@
  
  	elif test x"$enable_cups" = x"yes"; then
  		AC_MSG_ERROR(Cups support required but cups-config not located.  Make sure cups-devel related files are installed.)
-@@ -1845,7 +1849,7 @@
+@@ -906,7 +910,7 @@
+     AC_TRY_LINK([
+ #include <stdio.h>],
+ [
+-		if (0) {
++		int p = 1; if (p > 0 && 0) {
+ 		   this_function_does_not_exist();
+ 		} else {
+ 		  return 1;
+@@ -1839,7 +1843,7 @@
  fi
  
  if test x"$BLDSHARED" = x"true" ; then
@@ -46,7 +46,7 @@
  fi
  
  AC_MSG_RESULT($BLDSHARED)
-@@ -1976,9 +1980,6 @@
+@@ -1970,9 +1974,6 @@
  AC_MSG_CHECKING([PICFLAG])
  AC_MSG_RESULT([$PICFLAG])
  
@@ -56,24 +56,10 @@
  AC_CACHE_CHECK([whether building shared libraries actually works],
                 [ac_cv_shlib_works],[
     # try building a trivial shared library
-@@ -4656,15 +4657,51 @@
- 		x"$ac_cv_header_pam_pam_modules_h" = x"no" ; then
- 		if test x"${try_pam}" = x"yes";then
- 			AC_MSG_ERROR([--with-pam=yes but pam_modules.h not found])
--       fi
-+		fi
- 		create_pam_modules=no
--    fi
-+	fi
- 
- 	if test x"$use_pam" = x"yes"; then
--    AC_DEFINE(WITH_PAM,1,[Whether to include PAM support])
-+		AC_DEFINE(WITH_PAM,1,[Whether to include PAM support])
- 		AC_DEFINE(HAVE_LIBPAM,1,[Whether libpam is available])
+@@ -4695,6 +4696,42 @@
  		AUTH_LIBS="$AUTH_LIBS $PAM_LIBS"
--    with_pam_for_crypt=yes
-+		with_pam_for_crypt=yes
-+
+     with_pam_for_crypt=yes
+ 
 +		AC_VERIFY_C_PROTOTYPE(
 +			[int pam_get_data(const pam_handle_t *pamh, const char *module_data_name, const void **data)],
 +			[return 0;],
@@ -109,19 +95,11 @@
 +				#endif
 +			]
 +		)
- 
++
  		if test x"$create_pam_modules" = x"yes"; then
  			AC_DEFINE(WITH_PAM_MODULES,1,[Whether to include PAM MODULES support])
-@@ -4674,7 +4711,7 @@
- 			AC_CHECK_HEADERS(pam/pam_ext.h pam/_pam_macros.h)
- 			AC_CHECK_FUNC_EXT(pam_vsyslog,$PAM_LIBS)
- 		else
--			AC_MSG_WARN([PAM support detected but PAM MODULES support is missing])		
-+			AC_MSG_WARN([PAM support detected but PAM MODULES support is missing])
- 		fi
- 	fi
- 	AC_MSG_CHECKING(whether to use PAM support)
-@@ -5877,7 +5914,7 @@
+ 			# this checks are optional,
+@@ -5909,7 +5946,7 @@
  
  			AC_MSG_CHECKING(for aio_suspend)
  			AC_LINK_IFELSE([#include <aio.h>
@@ -130,7 +108,7 @@
  [AC_DEFINE(HAVE_AIO_SUSPEND, 1, [Have aio_suspend]) AC_MSG_RESULT(yes)],
  [AC_MSG_RESULT(no)])
  		fi
-@@ -6336,12 +6373,13 @@
+@@ -6368,12 +6405,13 @@
  		NSSSONAMEVERSIONSUFFIX=".2"
  		WINBIND_NSS_EXTRA_OBJS="../nsswitch/winbind_nss_linux.o"
  		;;
@@ -145,7 +123,7 @@
  		WINBIND_NSS="../nsswitch/nss_winbind.$SHLIBEXT"
  		WINBIND_WINS_NSS="../nsswitch/nss_wins.$SHLIBEXT"
  		;;
-@@ -6488,10 +6526,14 @@
+@@ -6520,10 +6558,14 @@
          AC_MSG_RESULT(no$winbind_no_reason)
  fi
  
@@ -160,7 +138,7 @@
  AC_SUBST(NSSSONAMEVERSIONSUFFIX)
  
  AC_SUBST(WINBIND_KRB5_LOCATOR)
-@@ -6810,13 +6852,21 @@
+@@ -6842,13 +6884,21 @@
  # Start
  AC_CHECK_FUNC(getmntent)
  
@@ -183,7 +161,7 @@
  		int main(void)
  		{
  			struct statfs fsd;
-@@ -7116,6 +7166,16 @@
+@@ -7148,6 +7198,16 @@
  	LIBS="$LIBS -ldmalloc"
  fi
  
@@ -200,7 +178,7 @@
  dnl Remove -L/usr/lib/? from LDFLAGS and LIBS
  LIB_REMOVE_USR_LIB(LDFLAGS)
  LIB_REMOVE_USR_LIB(LIBS)
-@@ -7164,6 +7224,7 @@
+@@ -7196,6 +7256,7 @@
  AC_SUBST(SMBD_LIBS)
  
  CFLAGS="${CFLAGS} \$(FLAGS)"
