@@ -1,6 +1,6 @@
 # $FreeBSD: head/net/samba-libsmbclient/Makefile 364390 2014-08-08 21:36:33Z timur $
 
-PORTREVISION=		2
+PORTREVISION=		3	
 PORTEPOCH=		0
 PKGNAMESUFFIX=		-libsmbclient
 
