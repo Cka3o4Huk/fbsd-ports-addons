@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	tdesktop-metastyle
-PORTVERSION=	0.7.8
+PORTVERSION=	0.7.10
 DISTNAME=	tdesktop-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 CATEGORIES=	www net-im deskutils
 MASTER_SITES=	GH
@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
-GH_COMMIT=	12f6b34
+GH_COMMIT=	54fedf4
 GH_TAGNAME=	${GH_COMMIT}
 
 USE_QT5=	core qmake_build buildtools_build
