@@ -11,9 +11,9 @@ COMMENT=	Telegram GUI client based on QT
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	MetaEmoji:www/tdesktop-metaemoji \
-		MetaLang:www/tdesktop-metalang \
-		MetaStyle:www/tdesktop-metastyle
+BUILD_DEPENDS=	MetaEmoji:${PORTSDIR}/www/tdesktop-metaemoji \
+		MetaLang:${PORTSDIR}/www/tdesktop-metalang \
+		MetaStyle:${PORTSDIR}/www/tdesktop-metastyle
 LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
 		libopus.so:${PORTSDIR}/audio/opus \
 		libopusfile.so:${PORTSDIR}/audio/opusfile \
