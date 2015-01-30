@@ -11,15 +11,20 @@ COMMENT=	Telegram GUI client based on QT
 
 LICENSE=	GPLv3
 
+BUILD_DEPENDS=	MetaEmoji:www/tdesktop-metaemoji \
+		MetaLang:www/tdesktop-metalang \
+		MetaStyle:www/tdesktop-metastyle
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libopus.so:${PORTSDIR}/audio/opus \
+		libopusfile.so:${PORTSDIR}/audio/opusfile \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libopenal.so:${PORTSDIR}/audio/openal-soft
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
 GH_COMMIT=	57db4d5
 GH_TAGNAME=	${GH_COMMIT}
-
-BUILD_DEPENDS=	MetaEmoji:www/tdesktop-metaemoji \
-		MetaLang:www/tdesktop-metalang \
-		MetaStyle:www/tdesktop-metastyle
 
 WRKSRC_SUBDIR=	Telegram
 MAKE_JOBS_UNSAFE=yes
@@ -31,12 +36,6 @@ QMAKE_ARGS+= 	INCLUDEPATH+=${LOCALBASE}/include \
 		LIBS+=-L${LOCALBASE}/lib
 
 SUB_FILES=	Telegram.sh
-
-LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
-		libopus.so:${PORTSDIR}/audio/opus \
-		libopusfile.so:${PORTSDIR}/audio/opusfile \
-		libogg.so:${PORTSDIR}/audio/libogg \
-		libopenal.so:${PORTSDIR}/audio/openal-soft
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing Telegram desktop..."
