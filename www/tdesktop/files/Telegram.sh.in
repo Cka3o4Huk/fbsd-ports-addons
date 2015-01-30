@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+exec "%%LOCALBASE%%/bin/Telegram-exec" -platformpluginpath "%%LOCALBASE%%/lib/qt5/plugins/platforms" -noupdate "$@"
