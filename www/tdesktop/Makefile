@@ -32,6 +32,12 @@ QMAKE_ARGS+= 	INCLUDEPATH+=${LOCALBASE}/include \
 
 SUB_FILES=	Telegram.sh
 
+LIB_DEPENDS=	libexif.so:${PORTSDIR}/graphics/libexif \
+		libopus.so:${PORTSDIR}/audio/opus \
+		libopusfile.so:${PORTSDIR}/audio/opusfile \
+		libogg.so:${PORTSDIR}/audio/libogg \
+		libopenal.so:${PORTSDIR}/audio/openal-soft
+
 do-install:
 	@${ECHO_MSG} -n ">> Installing Telegram desktop..."
 	${INSTALL_PROGRAM} ${WRKSRC}/../Debug/Telegram ${STAGEDIR}/${PREFIX}/bin/Telegram-exec
