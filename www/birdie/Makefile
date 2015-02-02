@@ -2,7 +2,7 @@
 # $FreeBSD$
 
 PORTNAME=	birdie
-PORTVERSION=	2.0.beta.0.9
+PORTVERSION=	2.0.beta.0.10
 CATEGORIES=	www
 MASTER_SITES=	GH
 
@@ -14,7 +14,7 @@ LICENSE=	GPLv3
 USE_GITHUB=	yes
 GH_ACCOUNT=	Cka3o4Huk
 GH_PROJECT=	birdie
-GH_COMMIT=	d492046
+GH_COMMIT=	a2cd4a1
 GH_TAGNAME=	${GH_COMMIT}
 
 BUILD_DEPENDS=  gnome-autogen.sh:${PORTSDIR}/devel/gnome-common \
