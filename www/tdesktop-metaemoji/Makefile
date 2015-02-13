@@ -18,7 +18,7 @@ GH_PROJECT=	tdesktop
 GH_COMMIT=	54fedf4
 GH_TAGNAME=	${GH_COMMIT}
 
-USE_QT5=	core qmake_build buildtools_build
+USE_QT5=	core gui:build network:build qmake_build buildtools_build
 USES=		qmake
 QMAKE_SOURCE_PATH= ${WRKSRC}/Telegram/MetaEmoji.pro
 QMAKE_ARGS+= 	INCLUDEPATH+=${LOCALBASE}/include \
