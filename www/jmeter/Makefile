@@ -2,7 +2,7 @@
 # $FreeBSD: head/www/jmeter/Makefile 360680 2014-07-04 23:11:33Z adamw $
 
 PORTNAME=	apache-jmeter
-PORTVERSION=	2.11
+PORTVERSION=	2.13
 CATEGORIES=	www benchmarks java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	jmeter/binaries
