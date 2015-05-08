@@ -3,7 +3,7 @@
 
 PORTNAME=	sqldeveloper
 PORTVERSION=	4.1.0.19.07
-PORTREVISION=	1
+PORTREVISION=   2	
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html
@@ -58,6 +58,8 @@ do-install:
 		-not -name "*.bat" \
 		-not -name "*.bak" \
 		-not -name "*.dll" \
+		-not -name "*.so" \
+		-not -name "*.jnilib" \
 		-exec ${INSTALL_DATA} \{} ${STAGEDIR}/${DATADIR}/\{} \;
 	${ECHO_MSG} " [ DONE ]"
 .endfor

@@ -644,7 +644,6 @@ bin/sqldeveloper
 %%DATADIR%%/netbeans/platform/modules/ext/org.eclipse.osgi_3.9.1.v20140110-1610.jar
 %%DATADIR%%/netbeans/platform/modules/ext/osgi.cmpn-4.2.jar
 %%DATADIR%%/netbeans/platform/modules/ext/osgi.core-5.0.0.jar
-%%DATADIR%%/netbeans/platform/modules/lib/libjnidispatch-410.jnilib
 %%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_de.jar
 %%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_es.jar
 %%DATADIR%%/netbeans/platform/modules/locale/org-netbeans-api-annotations-common_fr.jar
