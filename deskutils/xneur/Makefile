@@ -2,19 +2,22 @@
 # $FreeBSD: head/deskutils/xneur/Makefile 382111 2015-03-24 16:01:21Z marino $
 
 PORTNAME=	xneur
-PORTVERSION=	0.15.0
-PORTREVISION=	6
+PORTVERSION=	0.17.0
+#DISTVERSIONSUFFIX=.orig
+#DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 CATEGORIES=	deskutils
-MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	https://launchpad.net/~andrew-crew-kuznetsov/+archive/xneur-stable/+files/
+DISTFILES=	${PORTNAME}_${PORTVERSION}.orig.tar.gz
 
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Auto keyboard switcher
 
+LICENSE=	GPL2
+
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		pathfix pkgconfig iconv tar:bzip2 libtool
+USES=		pathfix pkgconfig iconv libtool
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
