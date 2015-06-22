@@ -12,7 +12,7 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}.orig.tar.gz
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Auto keyboard switcher
 
-LICENSE=	GPL2
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libpcre.so:${PORTSDIR}/devel/pcre
