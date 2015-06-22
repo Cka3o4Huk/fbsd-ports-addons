@@ -92,7 +92,6 @@ share/locale/de/LC_MESSAGES/xneur.mo
 share/locale/ro/LC_MESSAGES/xneur.mo
 share/locale/ru/LC_MESSAGES/xneur.mo
 share/locale/uk/LC_MESSAGES/xneur.mo
-libdata/ldconfig/xneur
 libdata/pkgconfig/xneur.pc
 libdata/pkgconfig/xnconfig.pc
 share/icons/hicolor/16x16/apps/xneur.png
