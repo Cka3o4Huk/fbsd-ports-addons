@@ -3,11 +3,11 @@
 
 PORTNAME=	spook
 PORTVERSION=	20050207
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.litech.org/spook/dist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mizhka@gmail.com
 COMMENT=	Embedded RTP/RTSP/HTTP video streamer
 
 LICENSE=	GPLv2
