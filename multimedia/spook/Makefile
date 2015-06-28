@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 # TODO: FireWire IIDC support (needs libraw1394, libdc1394).
 # TODO: Test with Luigi-ified V4L input drivers e.g. pwc, etc.
 OPTIONS_DEFINE=	JPEG MPEG4 V4L DOCS
-OPTIONS_DEFAULT=	JPEG V4L
+OPTIONS_DEFAULT=	MPEG4 V4L
 
 MPEG4_DESC=	MPEG4 encoding support
 V4L_DESC=	V4L input support

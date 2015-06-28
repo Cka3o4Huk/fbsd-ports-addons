@@ -1,0 +1,51 @@
+--- spook.conf.dist.orig	2015-06-28 08:39:24 UTC
++++ spook.conf.dist
+@@ -317,11 +317,11 @@ RTSP-Handler Live {
+ # a JPEG only every once in a while which is much easier on the CPU.
+ #
+ 
+-Filter Framedrop {
+-	Input "raw"; # matches the output name from the DC1394 input above
+-	Output "dropped";
+-	Scale 150;
+-}
++#Filter Framedrop {
++#	Input "raw"; # matches the output name from the DC1394 input above
++#	Output "dropped";
++#	Scale 150;
++#}
+ 
+ #
+ # Now we pass the framedropped output into the JPEG encoder.
+@@ -331,10 +331,10 @@ Filter Framedrop {
+ # with uncompressed input.
+ #
+ 
+-Encoder JPEG {
+-	Input "dropped"; # matches the output name from the frame dropper
+-	Output "jpeg";
+-}
++#Encoder JPEG {
++#	Input "dropped"; # matches the output name from the frame dropper
++#	Output "jpeg";
++#}
+ 
+ #
+ # This block creates an simple output that can be accessed with HTTP.
+@@ -352,11 +352,11 @@ Encoder JPEG {
+ # with uncompressed input.
+ #
+ 
+-Output HTTP {
+-	Path /webcam;
+-	Input "jpeg"; # matches the output from the JPEG encoder above
+-	#Mode stream; # multipart JPEG streaming (does not work with IE)
+-}
++#Output HTTP {
++#	Path /webcam;
++#	Input "jpeg"; # matches the output from the JPEG encoder above
++#	#Mode stream; # multipart JPEG streaming (does not work with IE)
++#}
+ 
+ #
+ # This block specifies the log file where client requests will be logged in
