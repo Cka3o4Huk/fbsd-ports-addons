@@ -1,7 +1,7 @@
-# $FreeBSD: head/java/eclipse/Makefile.plugins 372556 2014-11-14 11:30:42Z antoine $
+# $FreeBSD: head/java/eclipse/Makefile.plugins 381788 2015-03-21 10:40:50Z marino $
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.7
+JAVA_VERSION=	1.7+
 JAVA_OS=	native
 
 REPO_DIRS?=	features plugins

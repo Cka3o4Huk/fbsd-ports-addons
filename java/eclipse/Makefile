@@ -1,8 +1,8 @@
 # Created by: Jimmy Kelley <ljboiler@gmail.com>
-# $FreeBSD: head/java/eclipse/Makefile 372556 2014-11-14 11:30:42Z antoine $
+# $FreeBSD: head/java/eclipse/Makefile 391412 2015-07-06 14:04:45Z amdmi3 $
 
 PORTNAME=	eclipse
-PORTVERSION=	4.4.1
+PORTVERSION=	4.5
 CATEGORIES=	java devel
 MASTER_SITES=	https://googledrive.com/host/0B2kYpXHnC5LpSk01bU1ud0N5bXc/
 DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \
@@ -10,7 +10,7 @@ DISTFILES=	eclipse.platform.releng.aggregator-${PORTVERSION}.xz \
 DIST_SUBDIR=	eclipse
 
 MAINTAINER=	ljboiler@gmail.com
-COMMENT=	Eclipse Luna SR-1
+COMMENT=	Eclipse Mars
 
 LICENSE=	EPL
 
@@ -59,12 +59,13 @@ WRKSRC=${WRKDIR}/eclipse.platform.releng.aggregator-${PORTVERSION}
 GITCLONE=${DISTDIR}/eclipse/eclipse-gitclone/eclipse.platform.releng.aggregator
 
 MVN_LOCAL_REPO=	-Dmaven.repo.local=${WRKDIR}/eclipse-maven-repo-${PORTVERSION}/repository
-MVN_TEST_FLAG=	-Dmaven.test.skip=true
+MVN_TEST_FLAG=	-Dmaven.test.skip=true -DskipTests=true
 MVN_SETTINGS+=	--offline
+MVN_OPTS?=	MAVEN_OPTS='-Xms1024m -Xmx1792m'
 ECLIPSE_WS=	gtk
 ECLIPSE_ARCH=	x86${ARCH:C/^i.86//:C/^amd/_/}
 E_SHORTARCH=	${ARCH:C/^i.86//:C/^amd//}
-ECLIPSE_BUILDID=M20140925-0400
+ECLIPSE_BUILDID=I20150603-2000
 SCRIPTS_ENV+=	ECLIPSE_ARCH=${ECLIPSE_ARCH} \
 		E_SHORTARCH=${E_SHORTARCH}
 PORTDESTDIR=	${PREFIX}/lib/eclipse
