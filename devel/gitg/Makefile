@@ -1,9 +1,8 @@
 # Created by: kipz <somicide@gmail.com>
-# $FreeBSD: head/devel/gitg/Makefile 386103 2015-05-11 20:56:01Z kwm $
+# $FreeBSD: head/devel/gitg/Makefile 396232 2015-09-06 20:48:51Z kwm $
 
 PORTNAME=	gitg
-PORTVERSION=	3.16.1
-PORTREVISION=	1
+PORTVERSION=	3.18.0
 CATEGORIES=	devel deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -25,7 +24,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:${PORTSDIR}/devel/gsettings-desktop-sc
 
 CONFLICTS=	gitg0-[0-9]*
 
-USES=		desktop-file-utils gmake libtool pathfix pkgconfig tar:xz
+USES=		compiler:c11 desktop-file-utils gmake libtool pathfix pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-maintainer-mode \
