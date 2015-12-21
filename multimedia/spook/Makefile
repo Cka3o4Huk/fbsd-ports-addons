@@ -1,5 +1,5 @@
 # Created by: Bruce M Simpson <bms@FreeBSD.org>
-# $FreeBSD: head/multimedia/spook/Makefile 388330 2015-06-02 12:28:29Z amdmi3 $
+# $FreeBSD: head/multimedia/spook/Makefile 390778 2015-06-28 10:47:11Z wen $
 
 PORTNAME=	spook
 PORTVERSION=	20050207
@@ -35,7 +35,7 @@ PORTDOCS=	*
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MJPEG}
-LIB_DEPENDS+=		libjpeg.so:${PORTSDIR}/graphics/jpeg
+USES+=		jpeg
 CONFIGURE_ARGS+=	--enable-encoder-jpeg
 .endif
 
