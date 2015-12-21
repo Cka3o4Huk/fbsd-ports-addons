@@ -2,7 +2,7 @@
 # $FreeBSD: head/databases/py-whisper/Makefile 386691 2015-05-18 17:07:45Z mat $
 
 PORTNAME=	whisper
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.15
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

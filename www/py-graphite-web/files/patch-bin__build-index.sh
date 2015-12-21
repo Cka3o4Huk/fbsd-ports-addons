@@ -1,5 +1,5 @@
---- bin/build-index.sh.orig	2014-02-14 15:05:38.180621787 +0000
-+++ bin/build-index.sh	2014-02-14 15:31:54.580513137 +0000
+--- bin/build-index.sh.orig	2015-11-27 18:37:16 UTC
++++ bin/build-index.sh
 @@ -1,17 +1,19 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -25,7 +25,7 @@
  
  if [ ! -d "$WHISPER_DIR" ]
  then
-@@ -19,13 +21,17 @@
+@@ -19,13 +21,17 @@ then
    exit 1
  fi
  

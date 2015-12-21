@@ -2,8 +2,7 @@
 # $FreeBSD: head/www/py-graphite-web/Makefile 386691 2015-05-18 17:07:45Z mat $
 
 PORTNAME=	graphite-web
-PORTVERSION=	0.9.12
-PORTREVISION=	2
+PORTVERSION=	0.9.15
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
