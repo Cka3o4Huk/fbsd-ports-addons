@@ -1,13 +1,14 @@
 # Created by: Alexander Logvinov <ports@logvinov.com>
-# $FreeBSD: head/deskutils/gxneur/Makefile 360658 2014-07-04 20:28:31Z tijl $
+# $FreeBSD: head/deskutils/gxneur/Makefile 399816 2015-10-20 11:25:18Z madpilot $
 
 PORTNAME=	gxneur
 PORTVERSION=	0.17.0
+DISTVERSIONSUFFIX=.orig
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/~andrew-crew-kuznetsov/+archive/xneur-stable/+files/
-DISTFILES=	${PORTNAME}_${PORTVERSION}.orig.tar.gz
+DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mizhka@gmail.com
 COMMENT=	GTK frontend for XNeur keyboard layout switcher
 
 LICENSE=	GPLv2
@@ -17,6 +18,7 @@ RUN_DEPENDS=	xneur:${PORTSDIR}/deskutils/xneur
 
 GNU_CONFIGURE=	yes
 USES=		pkgconfig
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GNOME=	gconf2 gtk20 libglade2
 INSTALLS_ICONS=	yes
 

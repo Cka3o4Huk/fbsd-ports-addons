@@ -5,7 +5,7 @@
  xneurrcdir = $(sysconfdir)/xneur
  xneurrc_DATA = \
 -	xneurrc	
-+	xneurrc.sample	
++	xneurrc.sample
  
  EXTRA_DIST = $(xneurrc_DATA)
  all: all-am

@@ -1,13 +1,12 @@
 # Created by: Alex "lissyara" Keda <admin@lissyara.su>
-# $FreeBSD: head/deskutils/xneur/Makefile 382111 2015-03-24 16:01:21Z marino $
+# $FreeBSD: head/deskutils/xneur/Makefile 399815 2015-10-20 11:24:34Z madpilot $
 
 PORTNAME=	xneur
 PORTVERSION=	0.17.0
-#DISTVERSIONSUFFIX=.orig
-#DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
+DISTVERSIONSUFFIX=.orig
 CATEGORIES=	deskutils
 MASTER_SITES=	https://launchpad.net/~andrew-crew-kuznetsov/+archive/xneur-stable/+files/
-DISTFILES=	${PORTNAME}_${PORTVERSION}.orig.tar.gz
+DISTNAME=	${PORTNAME}_${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	admin@lissyara.su
 COMMENT=	Auto keyboard switcher
@@ -17,10 +16,9 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libnotify.so:${PORTSDIR}/devel/libnotify \
 		libpcre.so:${PORTSDIR}/devel/pcre
 
-USES=		pathfix pkgconfig iconv libtool
+USES=		compiler:nestedfct iconv libtool localbase pathfix pkgconfig
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 GNU_CONFIGURE=	yes
-LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS=	--disable-static --libdir=${PREFIX}/lib/xneur
 
 USE_LDCONFIG=	${PREFIX}/lib/xneur ${PREFIX}/lib/xneur/xneur
@@ -33,23 +31,22 @@ OPTIONS_RADIO=	SOUND
 OPTIONS_RADIO_SOUND=	GSTREAMER OPENAL
 XOSD_DESC=	Xosd support
 
+OPTIONS_SUB=	yes
+
+NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
+
+X11_USE=		XORG=x11
+X11_CONFIGURE_WITH=	x
+
+ASPELL_LIB_DEPENDS=	libaspell.so:${PORTSDIR}/textproc/aspell
+ASPELL_CONFIGURE_ON=	--with-spell=aspell
+ASPELL_CONFIGURE_OFF=	--with-spell=no --without-aspell
+
+XOSD_LIB_DEPENDS=	libxosd.so:${PORTSDIR}/misc/xosd
+XOSD_CONFIGURE_WITH=	xosd
+
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MNLS}
-USES+=	gettext
-CONFIGURE_ARGS+=	--enable-nls
-PLIST_SUB+=	NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MX11}
-USE_XORG+=	x11
-CONFIGURE_ARGS+=	--with-x
-.else
-CONFIGURE_ARGS+=	--without-x
-.endif
 
 .if ${PORT_OPTIONS:MGSTREAMER}
 USE_GSTREAMER=	yes
@@ -59,20 +56,6 @@ USES+=			openal:al,alut
 CONFIGURE_ARGS+=	--with-sound=openal
 .else
 CONFIGURE_ARGS+=	--with-sound=no
-.endif
-
-.if ${PORT_OPTIONS:MASPELL}
-LIB_DEPENDS+=	libaspell.so:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=	--with-spell=aspell
-.else
-CONFIGURE_ARGS+=	--with-spell=no --without-aspell
-.endif
-
-.if ${PORT_OPTIONS:MXOSD}
-LIB_DEPENDS+=	libxosd.so:${PORTSDIR}/misc/xosd
-CONFIGURE_ARGS+=	--with-xosd
-.else
-CONFIGURE_ARGS+=	--without-xosd
 .endif
 
 post-patch:

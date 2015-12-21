@@ -1,5 +1,5 @@
 bin/xneur
-%%ETCDIR%%/xneurrc.sample
+@sample %%ETCDIR%%/xneurrc.sample
 lib/xneur/libxneur.so.17.0.0
 lib/xneur/libxneur.so.17
 lib/xneur/libxneur.so
@@ -87,11 +87,11 @@ include/xneur/xnconfig.h
 %%DATADIR%%/languages/uz/dictionary
 %%DATADIR%%/languages/uz/proto
 %%DATADIR%%/languages/uz/proto3
-share/locale/be/LC_MESSAGES/xneur.mo
-share/locale/de/LC_MESSAGES/xneur.mo
-share/locale/ro/LC_MESSAGES/xneur.mo
-share/locale/ru/LC_MESSAGES/xneur.mo
-share/locale/uk/LC_MESSAGES/xneur.mo
+%%NLS%%share/locale/be/LC_MESSAGES/xneur.mo
+%%NLS%%share/locale/de/LC_MESSAGES/xneur.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/xneur.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/xneur.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/xneur.mo
 libdata/pkgconfig/xneur.pc
 libdata/pkgconfig/xnconfig.pc
 share/icons/hicolor/16x16/apps/xneur.png
