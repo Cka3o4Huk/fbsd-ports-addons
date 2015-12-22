@@ -9,10 +9,10 @@ COMMENT=	Compression/decompression tool based on snappy library
 
 LICENSE=	BSD2CLAUSE
 
+LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	kubo
-
-LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
 
 USES=		autoreconf
 CONFIGURE_ARGS=	--with-snappy=${LOCALBASE}
