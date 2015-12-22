@@ -18,4 +18,7 @@ USES=		autoreconf
 CONFIGURE_ARGS=	--with-snappy=${LOCALBASE}
 GNU_CONFIGURE=	yes
 
+PLIST_FILES=	bin/snzip
+PORTDOCS=	*
+
 .include <bsd.port.mk>
