@@ -15,7 +15,7 @@ GH_ACCOUNT=	kubo
 LIB_DEPENDS=	libsnappy.so:${PORTSDIR}/archivers/snappy
 
 USES=		autoreconf
-CONFIGURE_ARGS=	--with-snappy=/usr/local
+CONFIGURE_ARGS=	--with-snappy=${LOCALBASE}
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>
