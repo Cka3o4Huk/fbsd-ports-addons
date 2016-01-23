@@ -21,4 +21,7 @@ USE_RC_SUBR=	carbon
 USE_GITHUB=	yes
 GH_ACCOUNT=	graphite-project
 
+post-stage:
+	${RM} -rf ${STAGEDIR}${PREFIX}/examples/init.d
+
 .include <bsd.port.mk>
