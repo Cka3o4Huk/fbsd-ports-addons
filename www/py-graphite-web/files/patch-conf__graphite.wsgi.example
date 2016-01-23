@@ -4,7 +4,7 @@
  import os
  import sys
 -sys.path.append('/opt/graphite/webapp')
-+sys.path.append('/usr/local/graphite/webapp')
++sys.path.append('%%PREFIX%%/graphite/webapp')
  
  try:
      from importlib import import_module

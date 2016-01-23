@@ -4,9 +4,9 @@
  #CONF_DIR = '/opt/graphite/conf'
  #STORAGE_DIR = '/opt/graphite/storage'
  #CONTENT_DIR = '/opt/graphite/webapp/content'
-+CONF_DIR = '/usr/local/etc/graphite'
++CONF_DIR = '%%PREFIX%%/etc/graphite'
 +STORAGE_DIR = '/var/db/carbon'
-+CONTENT_DIR = '/usr/local/share/graphite-web/content'
++CONTENT_DIR = '%%PREFIX%%/share/graphite-web/content'
  
  # To further or fully customize the paths, modify the following. Note that the
  # default settings for each of these are relative to CONF_DIR and STORAGE_DIR
@@ -14,8 +14,8 @@
  ## Webapp config files
  #DASHBOARD_CONF = '/opt/graphite/conf/dashboard.conf'
  #GRAPHTEMPLATES_CONF = '/opt/graphite/conf/graphTemplates.conf'
-+DASHBOARD_CONF = '/usr/local/etc/graphite/dashboard.conf'
-+GRAPHTEMPLATES_CONF = '/usr/local/etc/graphite/graphTemplates.conf'
++DASHBOARD_CONF = '%%PREFIX%%/etc/graphite/dashboard.conf'
++GRAPHTEMPLATES_CONF = '%%PREFIX%%/etc/graphite/graphTemplates.conf'
  
  ## Data directories
  # NOTE: If any directory is unreadable in DATA_DIRS it will break metric browsing

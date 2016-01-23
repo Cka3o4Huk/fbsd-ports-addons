@@ -28,7 +28,7 @@
  
  
 -conf_files = [ ('conf', glob('conf/*.example')) ]
-+conf_files = [ ('/usr/local/etc/graphite', glob('conf/*.example')) ]
++conf_files = [ ('%%PREFIX%%/etc/graphite', glob('conf/*.example')) ]
  examples = [ ('examples', glob('examples/example-*')) ]
  
  try:
