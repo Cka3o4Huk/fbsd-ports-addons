@@ -1,0 +1,15 @@
+TIMESTAMP = 1474548601
+SHA256 (features/goclipse_feature_0.16.1.v201607061938.jar) = f32b64062ec7c2d84d5ce6bb9469b723a864603cb8adb149509ef447d39ac66e
+SIZE (features/goclipse_feature_0.16.1.v201607061938.jar) = 3229
+SHA256 (plugins/com.googlecode.goclipse.core_0.16.1.v201607061938.jar) = 07b5e5fb79c887a53d690d1f9f3500000445ccc8c881999e699739424615b4d0
+SIZE (plugins/com.googlecode.goclipse.core_0.16.1.v201607061938.jar) = 336199
+SHA256 (plugins/com.googlecode.goclipse.debug_0.16.1.v201607061938.jar) = 4f019802474029969d0c4cc9bcc40c261ef17922c7c549682d6c281dbf894de9
+SIZE (plugins/com.googlecode.goclipse.debug_0.16.1.v201607061938.jar) = 71242
+SHA256 (plugins/com.googlecode.goclipse.jvmcheck_1.0.0.v201607061938.jar) = 641df18841e6866302e3e46ed496cecfa126898cd766d39f4db7bec3ff38be3f
+SIZE (plugins/com.googlecode.goclipse.jvmcheck_1.0.0.v201607061938.jar) = 12590
+SHA256 (plugins/com.googlecode.goclipse.tooling_0.16.1.v201607061938.jar) = 998182d1d454892dc8f8108f886b952159957d8eee72fb5b97426407f0a1bf7d
+SIZE (plugins/com.googlecode.goclipse.tooling_0.16.1.v201607061938.jar) = 493077
+SHA256 (plugins/com.googlecode.goclipse.ui_0.16.1.v201607061938.jar) = 51145d070987ac2492dba16371085aeb14f2f7add4d48b921a89ee00cebbd5e7
+SIZE (plugins/com.googlecode.goclipse.ui_0.16.1.v201607061938.jar) = 1138693
+SHA256 (plugins/org.json_1.0.0.v201011060100.jar) = 9cab915adf4748004f1993bd6afd0f72ae91047c0986617e1743498e2e3c06b2
+SIZE (plugins/org.json_1.0.0.v201011060100.jar) = 56700
