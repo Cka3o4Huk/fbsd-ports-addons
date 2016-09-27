@@ -1,0 +1,20 @@
+--- play.orig	2016-08-19 11:43:46 UTC
++++ play
+@@ -7,8 +7,6 @@ import os
+ import os.path
+ import re
+ 
+-sys.path.append(os.path.join(os.path.dirname(os.path.realpath(sys.argv[0])), 'framework', 'pym'))
+-
+ from play.cmdloader import CommandLoader
+ from play.application import PlayApplication
+ from play.utils import *
+@@ -34,7 +32,7 @@ try:
+     play_env = dict()
+ 
+     # ~~~~~~~~~~~~~~~~~~~~~~ Where is the framework?
+-    play_env["basedir"] = os.path.normpath(os.path.dirname(os.path.realpath(sys.argv[0])))
++    play_env["basedir"] = os.path.normpath(os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(sys.argv[0]))), 'share', 'play'))
+ 
+     # ~~~~~~~~~~~~~~~~~~~~~~ What is the framework id?
+     play_env["id_file"] = os.path.join(play_env['basedir'], 'id')

@@ -1,0 +1,6 @@
+The Play framework is an open source web application framework, which follows
+the model-view-controller (MVC) architectural pattern. It focuses on 
+developer productivity by using convention over configuration, 
+hot code reloading and display of errors in the browser.
+
+WWW: https://github.com/playframework/play1
